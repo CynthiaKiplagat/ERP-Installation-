@@ -24,7 +24,6 @@ Ubuntu 22.04
 -sudo apt install mariadb-server mariadb-client
 ### Install Redis Server
 -sudo apt-get install redis-server
-
 ### Install other necessary packages (for fonts, PDFs, etc)
 -sudo apt-get install xvfb libfontconfig wkhtmltopdf
 -sudo apt-get install libmysqlclient-dev
@@ -46,40 +45,40 @@ Ubuntu 22.04
   > default-character-set = utf8mb4
 
 #### Restart the MySQL server (for the config to take effect)
-sudo service mysql restart
+-sudo service mysql restart
 ### Install Curl,NPM and Yarn
-sudo apt install curl
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.profile
-nvm install 16.15.0
-sudo npm install -g yarn
+-sudo apt install curl
+-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+-source ~/.profile
+-nvm install 16.15.0
+-sudo npm install -g yarn
 ### Install Frappe-Bench
-sudo pip3 install frappe-bench
+-sudo pip3 install frappe-bench
 #### Initialise Frappe-Bench
-bench init --frappe-branch version-14 frappe-bench
-Go to Frappe Bench directory
-cd frappe-bench/
-Change user directory permissions
-chmod -R o+rx /home/erpuser/
+-bench init --frappe-branch version-14 frappe-bench
+##### Go to Frappe Bench directory
+-cd frappe-bench/
+#### Change user directory permissions
+-chmod -R o+rx /home/erpuser/
 #### Create a New Site
-bench new-site firsttime
+-bench new-site firsttime
 ### Install ERPNEXT AND OTHER APPS
-bench get-app payments
-bench get-app --branch version-14 erpnext
-bench get-app hrms
+-bench get-app payments
+-bench get-app --branch version-14 erpnext
+-bench get-app hrms
 ### Install all the Apps
-bench --site firsttime install-app erpnext
-bench --site firsttime install-app hrms
+-bench --site firsttime install-app erpnext
+-bench --site firsttime install-app hrms
 ### ERPNEXT  in Development
-bench start
-bench --site firsttime enable-scheduler
-bench --site firsttime set-maintenance-mode off
+-bench start
+-bench --site firsttime enable-scheduler
+-bench --site firsttime set-maintenance-mode off
 ### ERPNEXT in Production
-set the production environment 
-sudo bench setup production frappe
-bench setup nginx
-sudo supervisorctl restart all
-sudo bench setup production frappe
+#### set the production environment 
+-sudo bench setup production frappe
+-bench setup nginx
+-sudo supervisorctl restart all
+-sudo bench setup production frappe
 
 
 
