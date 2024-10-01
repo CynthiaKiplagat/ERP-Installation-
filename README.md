@@ -2,45 +2,45 @@
 My experience in installing and managing ERPNext (v14) on a production and development environment.
 Ubuntu 22.04
 # Prerequisites
-Node.js version 16 and 18
-Python 3.10+
+-Node.js version 16 and 18
+-Python 3.10+
 # Installation Process
 ### Update & upgrade server packages
-sudo apt-get update -y
-sudo apt-get upgrade -y
+-sudo apt-get update -y
+-sudo apt-get upgrade -y
 ### Create a new sudo user 
-sudo adduser erpuser
-usermod -aG sudo erpuser
+-sudo adduser erpuser
+-usermod -aG sudo erpuser
 ### Switch to the new user
-su erpuser
+-su erpuser
 ### Installation GIT
-sudo apt-get install git
+-sudo apt-get install git
 ### Install python and its enviroment
-sudo apt-get install python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils
-sudo apt-get install python3.10-venv
+-sudo apt-get install python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils
+-sudo apt-get install python3.10-venv
 ### For repository management install software properties
-sudo apt-get install software-properties-common
+-sudo apt-get install software-properties-common
 ### Install Mariadb
-sudo apt install mariadb-server mariadb-client
+-sudo apt install mariadb-server mariadb-client
 ### Install Redis Server
-sudo apt-get install redis-server
+-sudo apt-get install redis-server
 
 ### Install other necessary packages (for fonts, PDFs, etc)
-sudo apt-get install xvfb libfontconfig wkhtmltopdf
-sudo apt-get install libmysqlclient-dev
+-sudo apt-get install xvfb libfontconfig wkhtmltopdf
+-sudo apt-get install libmysqlclient-dev
 ### Configure mysql server
-sudo mysql_secure_installation
+-sudo mysql_secure_installation
 ### Edit the MySQL default config file
-sudo nano /etc/mysql/my.cnf
-add the following 
-[mysqld]
-character-set-client-handshake = FALSE
-character-set-server = utf8mb4
-collation-server = utf8mb4_unicode_ci
+-sudo nano /etc/mysql/my.cnf
+-add the following 
 
+> [mysqld]
+> character-set-client-handshake = FALSE
+> character-set-server = utf8mb4
+> collation-server = utf8mb4_unicode_ci
 
-[mysql]
-default-character-set = utf8mb4
+> [mysql]
+> default-character-set = utf8mb4
 
 #### Restart the MySQL server (for the config to take effect)
 sudo service mysql restart
