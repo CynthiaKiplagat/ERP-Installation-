@@ -37,11 +37,13 @@ Ubuntu 22.04
 > [mysqld]
   > 
   > character-set-client-handshake = FALSE
+  > 
   > character-set-server = utf8mb4
+  > 
   > collation-server = utf8mb4_unicode_ci
-
 > [mysql]
-> default-character-set = utf8mb4
+  > 
+  > default-character-set = utf8mb4
 
 #### Restart the MySQL server (for the config to take effect)
 sudo service mysql restart
