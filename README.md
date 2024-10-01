@@ -7,7 +7,9 @@ Ubuntu 22.04
 # Installation Process
 ### Update & upgrade server packages
 -sudo apt-get update -y
+
 -sudo apt-get upgrade -y
+
 ### Create a new sudo user 
 -sudo adduser erpuser
 -usermod -aG sudo erpuser
